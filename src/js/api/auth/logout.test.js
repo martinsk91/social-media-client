@@ -44,8 +44,8 @@ describe("storage", () => {
   describe("logOut", () => {
     it("Logout function clears the token from storage ", async () => {
       localStorage.setItem("token", testToken)
-      const token = await logout();
-      expect(token).toEqual(undefined);
+      logout();
+      expect(localStorage.getItem("token")).toBeNull();
     });
   });
 
